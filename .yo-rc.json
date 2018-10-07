@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.davidfacsko"
+    },
+    "jhipsterVersion": "5.3.4",
+    "applicationType": "monolith",
+    "baseName": "jhHotel",
+    "packageName": "com.davidfacsko",
+    "packageFolder": "com/davidfacsko",
+    "serverPort": "8080",
+    "authenticationType": "session",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "rememberMeKey": "72bb1a0a796747bf577c453af990154c7982ce2d4102e24b5958e5e25ab9ead93513e1ec0ba729cf6cf5e22ea5e68037ebda",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
