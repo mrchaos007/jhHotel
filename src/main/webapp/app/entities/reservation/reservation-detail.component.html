@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reservation">
+            <h2><span>Reservation</span> {{reservation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Check In</span></dt>
+                <dd>
+                    <span>{{reservation.checkIn}}</span>
+                </dd>
+                <dt><span>Check Out</span></dt>
+                <dd>
+                    <span>{{reservation.checkOut}}</span>
+                </dd>
+                <dt><span>Room</span></dt>
+                <dd>
+                    <div *ngIf="reservation.roomId">
+                        <a [routerLink]="['/room', reservation.roomId, 'view']">{{reservation.roomId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Guest</span></dt>
+                <dd>
+                    <div *ngIf="reservation.guestId">
+                        <a [routerLink]="['/guest', reservation.guestId, 'view']">{{reservation.guestId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reservation', reservation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

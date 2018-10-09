@@ -1,0 +1,33 @@
+{
+    "name": "Room",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "RoomType",
+            "fieldValues": "BASIC,SUPERIOR,DELUXE"
+        },
+        {
+            "fieldName": "numOfBeds",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "roomNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181009141923",
+    "entityTableName": "room",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

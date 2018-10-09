@@ -1,0 +1,33 @@
+{
+    "name": "Review",
+    "fields": [
+        {
+            "fieldName": "rating",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "revText",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "guest",
+            "otherEntityName": "guest",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "review"
+        }
+    ],
+    "changelogDate": "20181009141922",
+    "entityTableName": "review",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-reservation-heading">Create or edit a Reservation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!reservation.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="reservation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_checkIn">Check In</label>
+                    <div class="input-group">
+                        <input id="field_checkIn" type="text" class="form-control" name="checkIn" ngbDatepicker  #checkInDp="ngbDatepicker" [(ngModel)]="reservation.checkIn"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="checkInDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_checkOut">Check Out</label>
+                    <div class="input-group">
+                        <input id="field_checkOut" type="text" class="form-control" name="checkOut" ngbDatepicker  #checkOutDp="ngbDatepicker" [(ngModel)]="reservation.checkOut"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="checkOutDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_room">Room</label>
+                    <select class="form-control" id="field_room" name="room" [(ngModel)]="reservation.roomId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="roomOption.id" *ngFor="let roomOption of rooms; trackBy: trackRoomById">{{roomOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_guest">Guest</label>
+                    <select class="form-control" id="field_guest" name="guest" [(ngModel)]="reservation.guestId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="guestOption.id" *ngFor="let guestOption of guests; trackBy: trackGuestById">{{guestOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

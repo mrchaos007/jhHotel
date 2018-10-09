@@ -1,0 +1,41 @@
+entity Guest {
+	name String
+}
+
+entity Reservation {
+	checkIn LocalDate,
+    checkOut LocalDate
+}
+
+
+entity Review {
+	rating Integer,
+    revText TextBlob
+}
+
+entity Room {
+	type RoomType,
+    numOfBeds Integer,
+    roomNumber Integer,
+    image ImageBlob
+}
+
+
+enum RoomType {
+    BASIC, SUPERIOR, DELUXE
+}
+
+relationship ManyToOne {
+	Reservation{guest} to Guest
+}
+
+relationship OneToOne {
+	Reservation{room} to Room,
+    Review{guest} to Guest
+}
+
+dto * with mapstruct
+
+service all with serviceImpl
+
+paginate Guest, Reservation, Room, Review with pagination

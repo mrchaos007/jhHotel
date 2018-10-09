@@ -1,0 +1,38 @@
+{
+    "name": "Reservation",
+    "fields": [
+        {
+            "fieldName": "checkIn",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "checkOut",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "room",
+            "otherEntityName": "room",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "reservation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "guest",
+            "otherEntityName": "guest",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181009141921",
+    "entityTableName": "reservation",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
