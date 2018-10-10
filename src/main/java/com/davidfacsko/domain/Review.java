@@ -31,7 +31,7 @@ public class Review implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Guest guest;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -68,17 +68,17 @@ public class Review implements Serializable {
         this.revText = revText;
     }
 
-    public Guest getGuest() {
-        return guest;
+    public User getUser() {
+        return user;
     }
 
-    public Review guest(Guest guest) {
-        this.guest = guest;
+    public Review user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setGuest(Guest guest) {
-        this.guest = guest;
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

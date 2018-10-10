@@ -36,7 +36,7 @@ public class Reservation implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("")
-    private Guest guest;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -86,17 +86,17 @@ public class Reservation implements Serializable {
         this.room = room;
     }
 
-    public Guest getGuest() {
-        return guest;
+    public User getUser() {
+        return user;
     }
 
-    public Reservation guest(Guest guest) {
-        this.guest = guest;
+    public Reservation user(User user) {
+        this.user = user;
         return this;
     }
 
-    public void setGuest(Guest guest) {
-        this.guest = guest;
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

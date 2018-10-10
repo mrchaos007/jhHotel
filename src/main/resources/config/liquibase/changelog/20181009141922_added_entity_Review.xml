@@ -29,8 +29,8 @@
             <column name="rev_text" type="clob">
                 <constraints nullable="true" />
             </column>
-            <column name="guest_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_review_guest_id" />
+            <column name="user_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_review_user_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>

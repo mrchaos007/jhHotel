@@ -17,7 +17,7 @@ public class ReservationDTO implements Serializable {
 
     private Long roomId;
 
-    private Long guestId;
+    private Long userId;
 
     public Long getId() {
         return id;
@@ -51,12 +51,12 @@ public class ReservationDTO implements Serializable {
         this.roomId = roomId;
     }
 
-    public Long getGuestId() {
-        return guestId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setGuestId(Long guestId) {
-        this.guestId = guestId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -87,7 +87,7 @@ public class ReservationDTO implements Serializable {
             ", checkIn='" + getCheckIn() + "'" +
             ", checkOut='" + getCheckOut() + "'" +
             ", room=" + getRoomId() +
-            ", guest=" + getGuestId() +
+            ", guest=" + getUserId() +
             "}";
     }
 }

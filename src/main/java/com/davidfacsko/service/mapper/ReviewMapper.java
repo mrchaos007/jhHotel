@@ -8,13 +8,13 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Review and its DTO ReviewDTO.
  */
-@Mapper(componentModel = "spring", uses = {GuestMapper.class})
+@Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface ReviewMapper extends EntityMapper<ReviewDTO, Review> {
 
-    @Mapping(source = "guest.id", target = "guestId")
+    @Mapping(source = "user.id", target = "userId")
     ReviewDTO toDto(Review review);
 
-    @Mapping(source = "guestId", target = "guest")
+    @Mapping(source = "userId", target = "user")
     Review toEntity(ReviewDTO reviewDTO);
 
     default Review fromId(Long id) {

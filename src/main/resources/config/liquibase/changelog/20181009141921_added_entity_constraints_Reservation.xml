@@ -14,11 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="room"/>
 
-        <addForeignKeyConstraint baseColumnNames="guest_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="reservation"
-                                 constraintName="fk_reservation_guest_id"
+                                 constraintName="fk_reservation_user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="guest"/>
+                                 referencedTableName="jhi_user"/>
 
     </changeSet>
 </databaseChangeLog>

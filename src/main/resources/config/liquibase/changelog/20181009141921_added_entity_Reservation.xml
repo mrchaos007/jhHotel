@@ -32,7 +32,7 @@
             <column name="room_id" type="bigint">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_reservation_room_id" />
             </column>
-            <column name="guest_id" type="bigint">
+            <column name="user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

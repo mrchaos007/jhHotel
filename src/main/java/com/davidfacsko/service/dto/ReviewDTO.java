@@ -16,7 +16,7 @@ public class ReviewDTO implements Serializable {
     @Lob
     private String revText;
 
-    private Long guestId;
+    private Long userId;
 
     public Long getId() {
         return id;
@@ -42,12 +42,12 @@ public class ReviewDTO implements Serializable {
         this.revText = revText;
     }
 
-    public Long getGuestId() {
-        return guestId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setGuestId(Long guestId) {
-        this.guestId = guestId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class ReviewDTO implements Serializable {
             "id=" + getId() +
             ", rating=" + getRating() +
             ", revText='" + getRevText() + "'" +
-            ", guest=" + getGuestId() +
+            ", guest=" + getUserId() +
             "}";
     }
 }
