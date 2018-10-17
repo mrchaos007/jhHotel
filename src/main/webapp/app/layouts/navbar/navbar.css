@@ -7,7 +7,8 @@ Navbar
 }
 
 .jh-navbar {
-    background-color: #353d47;
+    /* background-color: #353d47; */
+    background-color: #fff;
     padding: 0.2em 1em;
 }
 
@@ -21,7 +22,8 @@ Navbar
 .jh-navbar .dropdown-item.active,
 .jh-navbar .dropdown-item.active:focus,
 .jh-navbar .dropdown-item.active:hover {
-    background-color: #353d47;
+    /* background-color: #353d47; */
+    bacground-color: #000;
 }
 
 .jh-navbar .dropdown-toggle::after {
@@ -41,13 +43,14 @@ Navbar
 }
 
 .jh-navbar .jh-navbar-toggler {
-    color: #ccc;
+    /* color: #ccc; */
+    color: #000;
     font-size: 1.5em;
     padding: 10px;
 }
 
 .jh-navbar .jh-navbar-toggler:hover {
-    color: #fff;
+    color: #000;
 }
 
 @media screen and (min-width: 768px) {
@@ -76,7 +79,7 @@ Logo styles
 
 .logo-img {
     height: 100%;
-    background: url('../../../content/images/logo.png') no-repeat center center;
+    background: url('../../../content/images/logo2.png') no-repeat center center;
     background-size: contain;
     width: 100%;
 }
