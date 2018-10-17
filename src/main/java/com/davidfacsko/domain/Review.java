@@ -30,7 +30,7 @@ public class Review implements Serializable {
     private String revText;
 
     @OneToOne
-    @JoinColumn(unique = true)
+    @JoinColumn(unique = true, name="user_id")
     private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
