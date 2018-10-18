@@ -15,9 +15,9 @@ public class ReservationDTO implements Serializable {
 
     private LocalDate checkOut;
 
-    private Long roomId;
+    private RoomDTO roomDTO;
 
-    private Long userId;
+    private UserDTO userDTO;
 
     public Long getId() {
         return id;
@@ -43,20 +43,20 @@ public class ReservationDTO implements Serializable {
         this.checkOut = checkOut;
     }
 
-    public Long getRoomId() {
-        return roomId;
+    public RoomDTO getRoomDTO() {
+        return roomDTO;
     }
 
-    public void setRoomId(Long roomId) {
-        this.roomId = roomId;
+    public void setRoomDTO(RoomDTO roomDTO) {
+        this.roomDTO = roomDTO;
     }
 
-    public Long getUserId() {
-        return userId;
+    public UserDTO getUserDTO() {
+        return userDTO;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUserDTO(UserDTO userDTO) {
+        this.userDTO = userDTO;
     }
 
     @Override
@@ -86,8 +86,8 @@ public class ReservationDTO implements Serializable {
             "id=" + getId() +
             ", checkIn='" + getCheckIn() + "'" +
             ", checkOut='" + getCheckOut() + "'" +
-            ", room=" + getRoomId() +
-            ", guest=" + getUserId() +
+            ", room=" + getRoomDTO() +
+            ", guest=" + getUserDTO() +
             "}";
     }
 }

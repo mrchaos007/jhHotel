@@ -9,7 +9,9 @@ import { ReservationService } from './reservation.service';
 import { IRoom } from 'app/shared/model/room.model';
 import { RoomService } from 'app/entities/room';
 import { IGuest } from 'app/shared/model/guest.model';
-import { GuestService } from 'app/entities/guest';
+// import { GuestService } from 'app/entities/guest';
+import { UserService } from 'app/core';
+import { IUser } from 'app/core/';
 
 @Component({
     selector: 'jhi-reservation-update',
@@ -21,7 +23,8 @@ export class ReservationUpdateComponent implements OnInit {
 
     rooms: IRoom[];
 
-    guests: IGuest[];
+    // guests: IGuest[];
+    guests: IUser[];
     checkInDp: any;
     checkOutDp: any;
 
@@ -29,7 +32,8 @@ export class ReservationUpdateComponent implements OnInit {
         private jhiAlertService: JhiAlertService,
         private reservationService: ReservationService,
         private roomService: RoomService,
-        private guestService: GuestService,
+        // private guestService: GuestService,
+        private guestService: UserService,
         private activatedRoute: ActivatedRoute
     ) {}
 

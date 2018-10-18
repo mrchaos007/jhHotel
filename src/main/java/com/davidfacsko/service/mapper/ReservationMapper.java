@@ -11,12 +11,12 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring", uses = {RoomMapper.class, UserMapper.class})
 public interface ReservationMapper extends EntityMapper<ReservationDTO, Reservation> {
 
-    @Mapping(source = "room.id", target = "roomId")
-    @Mapping(source = "user.id", target = "userId")
+    @Mapping(source = "room", target = "roomDTO")
+    @Mapping(source = "user", target = "userDTO")
     ReservationDTO toDto(Reservation reservation);
 
-    @Mapping(source = "roomId", target = "room")
-    @Mapping(source = "userId", target = "user")
+    @Mapping(source = "roomDTO", target = "room")
+    @Mapping(source = "userDTO", target = "user")
     Reservation toEntity(ReservationDTO reservationDTO);
 
     default Reservation fromId(Long id) {

@@ -90,7 +90,10 @@ public class HotelBootstrap implements CommandLineRunner {
     	Room room3 = getRoom(1, RoomType.SUPERIOR, 3, imgSuperiorPath);
     	Reservation res1 = getReservation("2019-02-10", "2019-02-15", room1, bob);
     	Reservation res2 = getReservation("2019-02-14", "2019-02-16", room2, george);
-    	Reservation res3 = getReservation("2019-03-12", "2019-02-17", room3, bob);
+    	Reservation res3 = getReservation("2019-03-12", "2019-03-17", room3, bob);
+//    	Reservation res4 = getReservation("2019-02-08", "2019-02-10", room2, bob);
+//    	Reservation res5 = getReservation("2019-02-13", "2019-02-18", room3, george);
+//    	Reservation res6 = getReservation("2019-03-11", "2019-02-18", room2, bob);
     }
     
     

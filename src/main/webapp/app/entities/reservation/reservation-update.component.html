@@ -39,9 +39,9 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_guest">Guest</label>
-                    <select class="form-control" id="field_guest" name="guest" [(ngModel)]="reservation.guestId" >
+                    <select class="form-control" id="field_guest" name="guest" [(ngModel)]="reservation.userId" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="guestOption.id" *ngFor="let guestOption of guests; trackBy: trackGuestById">{{guestOption.id}}</option>
+                        <option [ngValue]="guestOption.id" *ngFor="let guestOption of guests; trackBy: trackGuestById">{{guestOption.id}} : {{guestOption.login}}</option>
                     </select>
                 </div>
             </div>

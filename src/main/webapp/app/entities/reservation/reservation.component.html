@@ -28,13 +28,13 @@
                 <td>{{reservation.checkIn | date:'mediumDate'}}</td>
                 <td>{{reservation.checkOut | date:'mediumDate'}}</td>
                 <td>
-                    <div *ngIf="reservation.roomId">
-                        <a [routerLink]="['../room', reservation.roomId , 'view' ]" >{{reservation.roomId}}</a>
+                    <div *ngIf="reservation.roomDTO">
+                        <a [routerLink]="['../room', reservation.roomDTO.id , 'view' ]" >{{reservation.roomDTO.roomNumber}} ( {{reservation.roomDTO.type}} )</a>
                     </div>
                 </td>
                 <td>
-                    <div *ngIf="reservation.guestId">
-                        <a [routerLink]="['../guest', reservation.guestId , 'view' ]" >{{reservation.guestId}}</a>
+                    <div *ngIf="reservation.userDTO">
+                        <a [routerLink]="['../admin/user-management', reservation.userDTO.login , 'view' ]" >{{reservation.userDTO.login}}</a>
                     </div>
                 </td>
                 <td class="text-right">
