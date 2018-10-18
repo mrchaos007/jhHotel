@@ -30,8 +30,8 @@ public class Reservation implements Serializable {
     @Column(name = "check_out")
     private LocalDate checkOut;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties("")
     private Room room;
 
     @ManyToOne
