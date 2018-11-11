@@ -6,12 +6,11 @@ import { JhiAlertService } from 'ng-jhipster';
 
 import { IReservation } from 'app/shared/model/reservation.model';
 import { ReservationService } from './reservation.service';
-import { IRoom } from 'app/shared/model/room.model';
+import { IRoom, Room } from 'app/shared/model/room.model';
 import { RoomService } from 'app/entities/room';
 import { IGuest } from 'app/shared/model/guest.model';
 // import { GuestService } from 'app/entities/guest';
-import { UserService } from 'app/core';
-import { IUser } from 'app/core/';
+import { UserService, User, IUser } from 'app/core';
 
 @Component({
     selector: 'jhi-reservation-update',
@@ -33,7 +32,7 @@ export class ReservationUpdateComponent implements OnInit {
         private reservationService: ReservationService,
         private roomService: RoomService,
         // private guestService: GuestService,
-        private guestService: UserService,
+        private userService: UserService,
         private activatedRoute: ActivatedRoute
     ) {}
 
@@ -44,10 +43,10 @@ export class ReservationUpdateComponent implements OnInit {
         });
         this.roomService.query({ filter: 'reservation-is-null' }).subscribe(
             (res: HttpResponse<IRoom[]>) => {
-                if (!this.reservation.roomId) {
+                if (!this.reservation.roomDTO) {
                     this.rooms = res.body;
                 } else {
-                    this.roomService.find(this.reservation.roomId).subscribe(
+                    this.roomService.find(this.reservation.roomDTO.id).subscribe(
                         (subRes: HttpResponse<IRoom>) => {
                             this.rooms = [subRes.body].concat(res.body);
                         },
@@ -57,12 +56,13 @@ export class ReservationUpdateComponent implements OnInit {
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
-        this.guestService.query().subscribe(
-            (res: HttpResponse<IGuest[]>) => {
+        this.userService.query().subscribe(
+            (res: HttpResponse<IUser[]>) => {
                 this.guests = res.body;
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
+
     }
 
     previousState() {
@@ -99,7 +99,7 @@ export class ReservationUpdateComponent implements OnInit {
         return item.id;
     }
 
-    trackGuestById(index: number, item: IGuest) {
+    trackGuestById(index: number, item: IUser) {
         return item.id;
     }
     get reservation() {

@@ -32,16 +32,16 @@
 
                 <div class="form-group">
                     <label class="form-control-label" for="field_room">Room</label>
-                    <select class="form-control" id="field_room" name="room" [(ngModel)]="reservation.roomId">
+                    <select class="form-control" id="field_room" name="room" [(ngModel)]="reservation.roomDTO">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="roomOption.id" *ngFor="let roomOption of rooms; trackBy: trackRoomById">{{roomOption.id}}</option>
+                        <option [ngValue]="roomOption" *ngFor="let roomOption of rooms; trackBy: trackRoomById">{{roomOption.id}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_guest">Guest</label>
-                    <select class="form-control" id="field_guest" name="guest" [(ngModel)]="reservation.userId" >
+                    <select class="form-control" id="field_guest" name="guest" [(ngModel)]="reservation.userDTO" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="guestOption.id" *ngFor="let guestOption of guests; trackBy: trackGuestById">{{guestOption.id}} : {{guestOption.login}}</option>
+                        <option [ngValue]="guestOption" *ngFor="let guestOption of guests; trackBy: trackGuestById">{{guestOption.id}} : {{guestOption.login}}</option>
                     </select>
                 </div>
             </div>
@@ -51,6 +51,9 @@
                 </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
                     <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+                <button type="submit" id="search-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'search'"></fa-icon>&nbsp;<span>Search</span>
                 </button>
             </div>
         </form>

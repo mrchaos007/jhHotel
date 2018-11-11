@@ -1,6 +1,6 @@
 import { Moment } from 'moment';
 
-export interface IReservation {
+export interface IUser {
     id?: number;
     checkIn?: Moment;
     checkOut?: Moment;
@@ -8,6 +8,6 @@ export interface IReservation {
     userId?: number;
 }
 
-export class Reservation implements IReservation {
+export class User implements IUser {
     constructor(public id?: number, public checkIn?: Moment, public checkOut?: Moment, public roomId?: number, public userId?: number) {}
 }
